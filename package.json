@@ -1,0 +1,16 @@
+{
+  "name": "my-theme-package",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Reusable local theme CSS package.",
+  "files": [
+    "styles",
+    "README.md"
+  ],
+  "style": "styles/globals.css",
+  "exports": {
+    "./globals.css": "./styles/globals.css",
+    "./styles/globals.css": "./styles/globals.css",
+    "./package.json": "./package.json"
+  }
+}
