@@ -49,6 +49,77 @@ npm install file:../my-theme-package
 import "my-theme-package/globals.css";
 ```
 
+## 接入示例
+
+### React / Vite
+
+1. 安装本地包：
+
+```bash
+npm install file:../my-theme-package
+```
+
+2. 在 `src/main.tsx` 中保留全局样式入口：
+
+```ts
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./index.css";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+```
+
+3. 在 `src/index.css` 中引入主题包：
+
+```css
+@import "my-theme-package/globals.css";
+```
+
+### Next.js App Router
+
+1. 安装本地包：
+
+```bash
+npm install file:../my-theme-package
+```
+
+2. 在 `src/app/globals.css` 或 `app/globals.css` 中引入：
+
+```css
+@import "my-theme-package/globals.css";
+```
+
+3. 在 `src/app/layout.tsx` 或 `app/layout.tsx` 中继续加载全局样式：
+
+```tsx
+import "./globals.css";
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="zh-CN">
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+### 纯 JS / TS 入口
+
+如果项目没有单独的 CSS 入口文件，也可以直接在应用入口引入：
+
+```ts
+import "my-theme-package/globals.css";
+```
+
 ## 维护方式
 
 直接修改 `styles/globals.css` 即可。因为这是本地路径安装，修改后通常重新启动目标项目，或重新执行一次安装，就能同步最新内容。
