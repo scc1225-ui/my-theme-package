@@ -1,6 +1,6 @@
-# my-theme-package
+# Semi Design- AI Friendly
 
-一个本地复用的主题样式包。这个包只提供一份可直接引入的全局主题 CSS，不包含组件、不需要 TypeScript 构建，也不依赖 Rollup 或 Vite 打包流程。
+一个本地复用的 Semi Design 主题样式包。这个包只提供一份可直接引入的全局主题 CSS，直接接入 AI IDE 工具中使用，不包含组件、不需要 TypeScript 构建，也不依赖 Rollup 或 Vite 打包流程。
 
 ## 目录
 
